@@ -7,8 +7,11 @@ A CLI tool to help you stay focused within the terminal
 2. Whenever you want to lock in, run java Main.java
 
 # Algorithm
-1. Read a list of JSON tasks
-    1. Trim each line of whitespace
+Main class
+
+1. readJSON()
+    1. Read a list of JSON tasks
+        1. Trim each line of whitespace
 2. Remove curly braces and commas from the file contents
 3. Split into a list of lines
 4. Loop through each line
