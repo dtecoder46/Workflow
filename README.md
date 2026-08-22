@@ -16,12 +16,11 @@ Main class
 2. processJSON()
     1. Remove curly braces and commas from the file contents
     2. Split into a list of lines
+    3. Make a new list without blank lines
 3. mapCreator()
     1. Loop through each line
-        1. If line is blank, skip
-        2. Else
-            1. Split each line by “: “
-        3. Pull the key and value into a HashMap
+        1. Split each line by “: “
+        2. Pull the key and value into a HashMap
 4. Loop until the user says “STOP”
     1. Loop twice
         1. Ask the user for the next task to work on from the list
