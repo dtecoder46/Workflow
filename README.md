@@ -7,16 +7,22 @@ A CLI tool to help you stay focused within the terminal
 2. Whenever you want to lock in, run java Main.java
 
 # Algorithm
+
 Main class
 
 1. readJSON()
     1. Read a list of JSON tasks
         1. Trim each line of whitespace
-2. Remove curly braces and commas from the file contents
-3. Split into a list of lines
-4. Loop through each line
-    1. Split each line by “: “
-5. Loop until the user says “STOP”
+2. processJSON()
+    1. Remove curly braces and commas from the file contents
+    2. Split into a list of lines
+3. mapCreator()
+    1. Loop through each line
+        1. If line is blank, skip
+        2. Else
+            1. Split each line by “: “
+        3. Pull the key and value into a HashMap
+4. Loop until the user says “STOP”
     1. Loop twice
         1. Ask the user for the next task to work on from the list
             1. If the input is “STOP”, end the loop 

@@ -24,12 +24,26 @@ public class Main {
 		return text;
 	}
 
-	
+	/*
+	 * Name: processJSON
+	 * Purpose: remove unnecessary characters and split JSON contents into a list of lines
+	 * Parameters: json - the JSON file contents
+	 * Return: JSONLines - the list of JSON lines
+	 */
+
+	public static String[] processJSON(String json) {
+		json = json.replaceAll("[{},]", "");
+
+		String[] JSONLines = json.split("\n");
+		
+		return JSONLines;
+	}	
 
 	public static void main(String[] args) {
 		String jsonText = readJSON();
-
-		print(jsonText);
+		String[] json = processJSON(jsonText);
+		
+		print(json[1]);
   	}
 
 	public static void print(String text) {
