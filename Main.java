@@ -79,11 +79,14 @@ public class Main {
 		return taskMap;
 	}
 
+	/*
+	 * Name: workflow()
+	 * Purpose: manage workflow continuation input and recursive conditional routing
+	 * Parameters: HashMap<String, String> taskMap - the tasks the user needs to do
+	 * Return: String continueStatus - a string stating if the user wants to continue
+	 */
+
 	public static String workflow(HashMap<String, String> taskMap) {
-		/* 
-		 * Outer loop TODO:
-		 * Comments
-		 */
 		
 		Scanner input = new Scanner(System.in);
 
@@ -94,7 +97,7 @@ public class Main {
 		if (continueStatus.compareTo("yes") == 0) {
 			// inner loop
 			// 15 min break timer
-			workflow(taskMap);
+			return workflow(taskMap);
 		}
 		else {
 			return "The workflow has stopped."; // error
@@ -103,8 +106,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		String jsonText = readJSON();
+		
 		String[] json = processJSON(jsonText);
+		
 		HashMap<String, String> map = mapCreator(json);
+		
+		String workStatus = workflow(map);
+
+		print(workStatus);
 
 		System.out.println(map.get("\"1\""));
   	}
