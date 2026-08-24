@@ -21,10 +21,9 @@ Main class
     1. Loop through each line
         1. Split each line by “: “
         2. Pull the key and value into a HashMap
-4. Loop until the user says “STOP”
+4. Loop until the user says “no” to continuing the workflow
     1. Loop twice
         1. Ask the user for the next task to work on from the list
-            1. If the input is “STOP”, end the loop 
         2. Run a 15 min timer (Timer.timer())
     2. Start a 15 min break timer (Timer.timer())
 

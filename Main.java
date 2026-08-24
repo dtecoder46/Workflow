@@ -79,6 +79,28 @@ public class Main {
 		return taskMap;
 	}
 
+	public static String workflow(HashMap<String, String> taskMap) {
+		/* 
+		 * Outer loop TODO:
+		 * Comments
+		 */
+		
+		Scanner input = new Scanner(System.in);
+
+		print("Do you want to continue your workflow? (yes/no): ");
+
+		String continueStatus = input.nextLine();
+
+		if (continueStatus.compareTo("yes") == 0) {
+			// inner loop
+			// 15 min break timer
+			workflow(taskMap);
+		}
+		else {
+			return "The workflow has stopped."; // error
+		}
+	}
+
 	public static void main(String[] args) {
 		String jsonText = readJSON();
 		String[] json = processJSON(jsonText);
