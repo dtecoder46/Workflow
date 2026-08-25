@@ -30,9 +30,9 @@ Main class
 Timer class
 
 1. timer()
-    1. Print a message indicating the start of the timer
+    1. Print a message indicating the start of the timer and the task to work on
     2. Loop 15 times
-        1. If the loop number is divisible by 5, print the time remaining
+        1. If the loop number is divisible by 5, print the time remaining and the task being worked on
         2. Sleep for 1 minute
     3. Print a message when the timer finishes
 

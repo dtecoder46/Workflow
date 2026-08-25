@@ -112,10 +112,7 @@ public class Main {
 		HashMap<String, String> map = mapCreator(json);
 		
 		String workStatus = workflow(map);
-
-		print(workStatus);
-
-		System.out.println(map.get("\"1\""));
+		
   	}
 
 	public static void print(String text) {
