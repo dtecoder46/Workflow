@@ -18,7 +18,12 @@ public class Timer {
 			if (minutes % 5 == 0) {
 				System.out.println(minutes + " minutes remaining for the task " + task);
 			}
+
+			int seconds = 60;
+			Thread.sleep(60 * 1000);
 		}
+
+		print("Time's up!");
 	}
 
 	public void print(String text) {
