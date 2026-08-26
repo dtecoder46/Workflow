@@ -41,3 +41,5 @@ Timer class
 w3Schools Java: https://www.w3schools.com/java/default.asp
 
 "Java, Java, Java: Objected-Oriented Problem Solving, 3rd Edition" by R. Morelli and R. Walde
+
+Java Thread.sleep(): https://www.geeksforgeeks.org/java/thread-sleep-method-in-java-with-examples/
