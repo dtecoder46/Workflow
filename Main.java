@@ -109,6 +109,10 @@ public class Main {
 
 			// 15 min break timer
 			
+			timer.setter("Break");
+
+			timer.timer();
+			
 			return workflow(taskMap);
 		}
 		else {
@@ -129,15 +133,21 @@ public class Main {
 	public static String taskLoop(HashMap<String, String> map, Timer timer, int loops, int currentIteration) {
 		Scanner input = new Scanner(System.in);
 		
-		// print all possible tasks to work on
-		
-		print("");
+		int id = 1;
+
+		print("Which task do you want to work on? (type the number): \n");
+
+		for (String i : map.keySet()) {
+			print("" + id + ": " + map.get("\"" + id + "\"") + "\n");
+			
+			id++;
+		}
 
 		// ask for the task the user wants to work on
 
-		print("Which task do you want to work on?: ");
+		String taskId = input.nextLine();
 
-		String currentTask = input.nextLine();
+		String currentTask = map.get("\"" + taskId + "\"");
 
 		timer.setter(currentTask);	
 
