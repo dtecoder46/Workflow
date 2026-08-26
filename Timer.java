@@ -24,7 +24,13 @@ public class Timer {
 			}
 
 			int seconds = 60;
-			Thread.sleep(60 * 1000);
+
+			try {
+				Thread.sleep(60 * 1000);
+			}
+			catch(Exception e) {
+				print("Error occurred");
+			}
 		}
 
 		print("Time's up!");
