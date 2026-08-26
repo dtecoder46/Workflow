@@ -93,14 +93,65 @@ public class Main {
 		print("Do you want to continue your workflow? (yes/no): ");
 
 		String continueStatus = input.nextLine();
+		
+		Timer timer = new Timer("");
 
 		if (continueStatus.compareTo("yes") == 0) {
 			// inner loop
+			
+			int taskLoopIterations = 2;
+
+			int currentIteration = 0;
+			
+			String status = taskLoop(taskMap, timer, taskLoopIterations, currentIteration);
+
+			print(status);	
+
 			// 15 min break timer
+			
 			return workflow(taskMap);
 		}
 		else {
-			return "The workflow has stopped."; // error
+			return "The workflow has stopped.";
+		}
+	}
+
+	/**
+	 * Name: taskLoop()
+	 * Purpose: to ask the user for the next task to work on; to run a 15 min work timer
+	 * @param map (HashMap<String, String>, the HashMap of tasks)
+	 * @param timer (Timer, the Timer class object)
+	 * @param loops (int, the number of times to repeat the task loop)
+	 * @param currentIteration (int, the number of times the loop has repeated so far)
+	 * @return none
+	 */
+
+	public static String taskLoop(HashMap<String, String> map, Timer timer, int loops, int currentIteration) {
+		Scanner input = new Scanner(System.in);
+		
+		// print all possible tasks to work on
+		
+		print("");
+
+		// ask for the task the user wants to work on
+
+		print("Which task do you want to work on?: ");
+
+		String currentTask = input.nextLine();
+
+		timer.setter(currentTask);	
+
+		timer.timer();
+		
+		// recursive conditional handling
+		
+		currentIteration++;
+
+		if (currentIteration < loops) {
+			return taskLoop(map, timer, loops, currentIteration);
+		}
+		else {
+			return "task loop has been completed";
 		}
 	}
 

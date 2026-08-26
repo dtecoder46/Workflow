@@ -1,12 +1,16 @@
 public class Timer {
 	private String taskName;
 
-	public Timer(String taskName) {
+	public Timer(String taskName) { // for initially setting the value
 		this.taskName = taskName;
 	}
 
 	public String getter() {
 		return taskName;
+	}
+
+	public void setter(String taskName) { // used for changing the value after the object is instantiated
+		this.taskName = taskName;
 	}
 
 	public void timer() {
