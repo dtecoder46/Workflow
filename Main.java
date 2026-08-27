@@ -109,6 +109,10 @@ public class Main {
 
 			// 15 min break timer
 			
+			print("Press \"Enter\" to start your break");
+
+			input.nextLine();
+
 			timer.setter("Break");
 
 			timer.timer();
@@ -135,7 +139,7 @@ public class Main {
 		
 		int id = 1;
 
-		print("Which task do you want to work on? (type the number): \n");
+		print("\nWhich task do you want to work on? (type the number): \n");
 
 		for (String i : map.keySet()) {
 			print("" + id + ": " + map.get("\"" + id + "\"") + "\n");
@@ -144,6 +148,8 @@ public class Main {
 		}
 
 		// ask for the task the user wants to work on
+		
+		System.out.print("Enter input here: ");
 
 		String taskId = input.nextLine();
 

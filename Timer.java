@@ -16,7 +16,7 @@ public class Timer {
 	public void timer() {
 		String task = getter();
 
-		print("Your timer for working on " + task + " starts now!");
+		print("\nYour timer for working on " + task + " starts now!\n");
 
 		for (int minutes = 15; minutes > 0; minutes--) {
 			if (minutes % 5 == 0) {
