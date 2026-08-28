@@ -109,7 +109,7 @@ public class Main {
 
 			// 15 min break timer
 			
-			print("Press \"Enter\" to start your break");
+			print("\nPress \"Enter\" to start your break");
 
 			input.nextLine();
 
@@ -120,7 +120,7 @@ public class Main {
 			return workflow(taskMap);
 		}
 		else {
-			return "The workflow has stopped.";
+			return "\nThe workflow has stopped.";
 		}
 	}
 
@@ -167,7 +167,7 @@ public class Main {
 			return taskLoop(map, timer, loops, currentIteration);
 		}
 		else {
-			return "task loop has been completed";
+			return "\ntask loop has been completed";
 		}
 	}
 
