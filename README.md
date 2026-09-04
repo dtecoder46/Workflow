@@ -9,7 +9,7 @@ A CLI tool to help you stay focused within the terminal
 
 # Algorithm
 
-Main class
+## Main class
 
 1. readJSON()
     1. Read a list of JSON tasks
@@ -28,7 +28,7 @@ Main class
         2. Run a 15 min timer (Timer.timer())
     2. Start a 15 min break timer (Timer.timer())
 
-Timer class
+## Timer class
 
 1. timer()
     1. Print a message indicating the start of the timer and the task to work on
@@ -36,6 +36,26 @@ Timer class
         1. If the loop number is divisible by 5, print the time remaining and the task being worked on
         2. Sleep for 1 minute
     3. Print a message when the timer finishes
+
+## taskInput class
+
+### Attributes
+1. *id* - the JSON key to uniquely number each task
+2. *json* - the JSON string containing the user's tasks to be sent to tasks.jsonc
+
+### Default constructor
+1. Initialize *id* as 1
+2. Initialize *json* as "{\n"
+
+### taskLoop()
+1. Task input loop
+    1. Increment *id* by 1
+    2. Ask the user for a task, store in *task*
+    2. Append *id* and *task* as a JSON key-value pair to *json*
+2. Add "}" to *json*
+
+### writeTasks()
+1. Overwrite content in tasks.jsonc
 
 # References
 
