@@ -172,6 +172,10 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
+		taskInput task = new taskInput();
+
+		task.taskLoop();
+
 		String jsonText = readJSON();
 		
 		String[] json = processJSON(jsonText);
