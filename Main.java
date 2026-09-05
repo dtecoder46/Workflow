@@ -90,7 +90,7 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 
-		print("Do you want to continue your workflow? (yes/no): ");
+		print("\nDo you want to continue your workflow? (yes/no): ");
 
 		String continueStatus = input.nextLine();
 		

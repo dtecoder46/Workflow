@@ -45,7 +45,7 @@ public class taskInput {
 	 * @return none
 	 */
 
-	public static void taskLoop() {
+	public void taskLoop() {
 
 		boolean continueInput = true;
 
@@ -58,30 +58,32 @@ public class taskInput {
 
 			String task = input.nextLine();
 
-			// add task as JSON key-value
-
-			this.json += "\t\"" + id + "\": \"" + task + "\",";
-
 			// check if user is done entering tasks
 
-			String taskUpperCase = task.toUpperCase();
+                        String taskUpperCase = task.toUpperCase();
 
-			int taskIsSTOP = taskUpperCase.compareTo("STOP");
+                        int taskIsSTOP = taskUpperCase.compareTo("STOP");
 
-			if (taskIsSTOP == 0) {
-				
-				continueInput = false;
+                        if (taskIsSTOP == 0) {
 
-				print("\nTask input loop has stopped, proceeding to startup the workflow timer...");
-			
-			
-			}
+                                continueInput = false;
+
+                                print("\nTask input loop has stopped, proceeding to startup the workflow timer...");
+
+				break;
+                        }
+
+			// add task as JSON key-value
+
+			this.json += "\t\"" + id + "\": \"" + task + "\",\n";
 		
 			this.id += 1; // increase id number for each task
 
 		} while (continueInput == true);
 
 		this.json += "}";
+
+		writeTasks();
 	}
 
 	/**
@@ -91,8 +93,10 @@ public class taskInput {
 	 * @return none
 	 */
 
-	public static void writeTasks() {
-		
+	public void writeTasks() {
+		writeFile fileWriter = new writeFile(this.json);
+
+		fileWriter.write();
 	}
 
 	public static void print(String text) {

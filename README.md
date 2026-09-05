@@ -53,9 +53,18 @@ A CLI tool to help you stay focused within the terminal
     2. Ask the user for a task, store in *task*
     2. Append *id* and *task* as a JSON key-value pair to *json*
 2. Add "}" to *json*
+3. Pass in 
 
-### writeTasks()
-1. Overwrite content in tasks.jsonc
+## writeFile class
+
+### Attributes
+1. fileContents
+
+### Constructor
+1. Set the value of fileContents
+
+### write()
+1. Overwrite previous content in tasks.jsonc with fileContents
 
 # References
 
